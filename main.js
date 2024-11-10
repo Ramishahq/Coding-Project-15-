@@ -5,7 +5,7 @@ import { Transaction } from './transaction.js';
 function displayPortfolioValue() {
     const portfolioValueSection = document.getElementById("portfolio-value");
     const portfolioValue = calculatePortfolioValue();
-    console.log("Portfolio Value:", portfolioValue);  // Debug log
+    console.log("Portfolio Value:", portfolioValue);  
     portfolioValueSection.innerHTML = `<h2>Portfolio Value: $${portfolioValue.toFixed(2)}</h2>`;
 }
 
@@ -13,7 +13,7 @@ function displayPortfolioValue() {
 function displayPortfolioAllocation() {
     const allocationSection = document.getElementById("portfolio-allocation");
     const allocations = getPortfolioAllocation();
-    console.log("Portfolio Allocation:", allocations);  // Debug log
+    console.log("Portfolio Allocation:", allocations);  
 
     allocations.forEach(allocation => {
         const allocationItem = document.createElement("p");
@@ -22,26 +22,24 @@ function displayPortfolioAllocation() {
     });
 }
 
-// Function to display transaction log
+// Function to display transaction 
 function displayTransactionLog(transactions) {
     const transactionLogSection = document.getElementById("transaction-log");
-    transactionLogSection.innerHTML = '';  // Clear previous entries
+    transactionLogSection.innerHTML = '';  
 
     transactions.forEach(transaction => {
         const transactionReceipt = document.createElement("p");
         transactionReceipt.className = "transaction";
-        transactionReceipt.textContent = transaction.getReceipt();  // Ensure this returns the expected string
+        transactionReceipt.textContent = transaction.getReceipt();  
         transactionLogSection.appendChild(transactionReceipt);
     });
 }
 
-// Wait for the window to load before executing the code
-window.onload = () => {
+
     // Initialize portfolio and display
     displayPortfolioValue();
     displayPortfolioAllocation();
 
-    // Create and display transactions
     const transactions = [];
     try {
         const transaction1 = new Transaction(1, 'buy', 10);
@@ -49,12 +47,11 @@ window.onload = () => {
         const transaction3 = new Transaction(3, 'buy', 7);
 
         transactions.push(transaction1, transaction2, transaction3);
-        console.log(transactions);  // Debug log to check transactions
+        console.log(transactions);  
 
     } catch (error) {
         console.error(error.message);
     }
 
-    // Display transaction logs
+    
     displayTransactionLog(transactions);
-};

@@ -5,7 +5,7 @@ export const assets = [
     { id: 3, name: 'Temu', type: 'stock', price: 200, quantity: 10 },
 ];
 
-// Function to get asset by ID
+// Function to get asset 
 export function getAssetById(id) {
     return assets.find(asset => asset.id === id);
 }
