@@ -1,5 +1,3 @@
-
-
 import { getAssetById } from './asset.js';
 
 export class Transaction {
@@ -16,7 +14,7 @@ export class Transaction {
         this.assetName = asset.name;
         this.pricePerUnit = asset.price;
 
-        // Update the asset quantity 
+        // Update the asset quantity based on the transaction type
         if (type === 'buy') {
             asset.quantity += quantity;
         } else if (type === 'sell') {
@@ -29,7 +27,7 @@ export class Transaction {
         }
     }
 
-
+    // Generate receipt for the transaction
     getReceipt() {
         const action = this.type === 'buy' ? 'Bought' : 'Sold';
         const totalValue = this.pricePerUnit * this.quantity;

@@ -1,9 +1,11 @@
-import { assetList as assets } from './asset.js';
+import { assets } from './asset.js';
 
+// Function to calculate total portfolio value
 export function calculatePortfolioValue() {
     return assets.reduce((total, asset) => total + (asset.price * asset.quantity), 0);
 }
 
+// Function to get portfolio allocation for each asset
 export function getPortfolioAllocation() {
     const totalValue = calculatePortfolioValue();
     return assets.map(asset => ({

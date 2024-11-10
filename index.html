@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Portfolio Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .ticket {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            background-color: #9a88da77;
+        }
+        .ticket h1 {
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .section {
+            margin-bottom: 1em;
+        }
+        .section h2 {
+            font-size: 1em;
+            border-bottom: 1px solid #333333;
+        }
+        .transaction {
+            font-size: 1em;
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h1>Financial Portfolio Management</h1>
+        <div class="section" id="portfolio-value">
+            <!-- Portfolio value will appear here -->
+        </div>
+        <div class="section" id="portfolio-allocation">
+            <h2>Portfolio Allocation</h2>
+            <!-- Portfolio allocation will appear here -->
+        </div>
+        <div class="section" id="transaction-log">
+            <h2>Transaction Receipts</h2>
+            <!-- Transaction receipts will appear here -->
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
